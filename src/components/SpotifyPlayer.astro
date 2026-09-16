@@ -1,0 +1,50 @@
+---
+// Convierte un link normal de Spotify (share) en la URL del embed oficial.
+// Soporta track, album, playlist, artist, episode, show.
+interface Props {
+  shareUrl: string;
+  /** Alto del embed: compacto (152) o normal (352 / 452 para playlists) */
+  height?: number;
+}
+
+const { shareUrl, height = 352 } = Astro.props;
+
+function toEmbedUrl(url: string): string | null {
+  try {
+    const u = new URL(url);
+    if (!u.hostname.includes("spotify.com")) return null;
+    // /track/ID, /album/ID, etc. (a veces con prefijo de idioma /intl-es/)
+    const match = u.pathname.match(
+      /\/(track|album|playlist|artist|episode|show)\/([A-Za-z0-9]+)/
+    );
+    if (!match) return null;
+    const [, type, id] = match;
+    return `https://open.spotify.com/embed/${type}/${id}?utm_source=generator&theme=0`;
+  } catch {
+    return null;
+  }
+}
+
+const embedUrl = shareUrl ? toEmbedUrl(shareUrl) : null;
+---
+
+{
+  embedUrl ? (
+    <iframe
+      src={embedUrl}
+      width="100%"
+      height={height}
+      style="border-radius:12px"
+      frameborder="0"
+      loading="lazy"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen
+      title="Reproductor de Spotify"
+    />
+  ) : (
+    <div class="rounded-xl border border-dashed border-ink/30 bg-ink/5 p-8 text-center text-sm text-ink/60">
+      Pegá el enlace de Spotify del álbum en <code>src/data/site.ts</code>
+      (<code>spotify.shareUrl</code>) para mostrar el reproductor.
+    </div>
+  )
+}

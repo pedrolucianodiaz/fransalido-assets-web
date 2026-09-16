@@ -3,11 +3,19 @@
 export const site = {
   artist: "Fran Salido",
   tagline: "Músico · Compositor",
-  heroTitle: ["Fran", "Salido"],
+  heroTitle: ["Santiagueña", "Luz Nativa"],
   heroSubtitle:
     "Nueva música, en vivo y en todas las plataformas. Escuchá el último lanzamiento y seguí el proyecto.",
   // Imagen de fondo del hero. Colocá tu archivo en /public y actualizá la ruta.
-  heroImage: "", // ej: "/hero.jpg" — vacío usa el degradado por defecto
+  heroImage: "/Fransalido-background.jpeg", // vacío usa el degradado por defecto
+};
+
+// Player de Spotify (embed oficial). Pegá acá el enlace que copiás desde
+// Spotify (⋯ → Compartir → Copiar enlace). Sirve para track, álbum o playlist.
+// Ej: "https://open.spotify.com/album/XXXXXXXXXXXXXXXXXXXXXX"
+export const spotify = {
+  shareUrl:
+    "https://open.spotify.com/intl-es/album/6iZl95lbFmHAq1TBUDkp6B?si=qqlEy7uDRpSC0ZE7QsZ3Qg",
 };
 
 export const navLinks = [
@@ -20,9 +28,7 @@ export const navLinks = [
 
 // "Listen & Subscribe On" — plataformas del hero. Reemplazá las URLs por las reales.
 export const platforms = [
-  { label: "Spotify", href: "https://open.spotify.com/" },
-  { label: "Apple Music", href: "https://music.apple.com/" },
+  { label: "Spotify", href: "https://open.spotify.com/intl-es/album/6iZl95lbFmHAq1TBUDkp6B" },
   { label: "YouTube", href: "https://youtube.com/" },
-  { label: "SoundCloud", href: "https://soundcloud.com/" },
   { label: "Instagram", href: "https://instagram.com/" },
 ];

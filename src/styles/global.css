@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
-/* Design tokens — replican el estilo del theme de referencia (Podkest) */
+/* Design tokens — paleta extraída del disco "Santiagueña Luz Nativa" */
 @theme {
   --font-display: "Boldonse", system-ui, sans-serif;
   --font-body: "Jost", system-ui, sans-serif;
 
-  --color-ink: #0d0d0f;
-  --color-cream: #f6f4ef;
-  --color-accent: #ff5c38;
+  --color-ink: #150e12; /* plum casi negro (fondo) */
+  --color-plum: #3a1f28; /* vino (degradados / secciones) */
+  --color-wine: #7e5143; /* marrón cálido (detalles) */
+  --color-gold: #dbcb87; /* dorado del título del CD (acento) */
+  --color-cream: #f2ead6; /* crema cálido (texto) */
+  --color-accent: #dbcb87; /* alias de gold para el acento */
 }
 
 html {

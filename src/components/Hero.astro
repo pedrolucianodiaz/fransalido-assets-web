@@ -14,38 +14,54 @@ const hasImage = site.heroImage && site.heroImage.length > 0;
       <img
         src={site.heroImage}
         alt=""
-        class="absolute inset-0 h-full w-full object-cover"
+        class="absolute inset-0 h-full w-full object-cover object-[75%_center]"
         aria-hidden="true"
       />
     ) : (
       <div
-        class="absolute inset-0 bg-gradient-to-br from-ink via-[#1a1320] to-[#2a0f0a]"
+        class="absolute inset-0 bg-gradient-to-br from-ink via-plum to-wine"
         aria-hidden="true"
       />
     )
   }
 
-  {/* Overlay para legibilidad del texto */}
-  <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
+  {/* Overlay de color: durazno al centro -> plum -> casi negro a la izquierda, transparente a la derecha */}
+  <div
+    class="absolute inset-0 opacity-75 bg-[linear-gradient(to_left,transparent_0%,#f5b97d_45%,#411628_80%,#030402_100%)]"
+    aria-hidden="true"
+  >
+  </div>
 
-  {/* Contenido centrado */}
-  <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
-    <p class="eyebrow mb-6 text-xs text-accent">{site.tagline}</p>
+  {/* Contenido: alineado a la izquierda en desktop, centrado en mobile */}
+  <div
+    class="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center px-6 text-center md:items-start md:text-left"
+  >
+    <p
+      class="eyebrow mb-6 text-xs text-accent [text-shadow:0_1px_3px_rgba(0,0,0,0.95),0_2px_9px_rgba(0,0,0,0.75)]"
+    >
+      {site.tagline}
+    </p>
 
     <h1
-      class="font-display text-5xl leading-[0.95] uppercase text-cream sm:text-7xl lg:text-8xl"
+      class="font-display text-[2.1rem] leading-[0.95] uppercase text-cream sm:text-[3.15rem] lg:text-[4.2rem] [text-shadow:0_4px_14px_rgba(0,0,0,0.9),0_14px_55px_rgba(0,0,0,0.7),0_0_90px_rgba(0,0,0,0.5)]"
     >
       {site.heroTitle.map((line) => <span class="block">{line}</span>)}
     </h1>
 
-    <p class="mx-auto mt-8 max-w-xl text-base text-cream/80 sm:text-lg">
+    <p
+      class="mt-8 max-w-xl text-base text-cream sm:text-lg [text-shadow:0_3px_11px_rgba(0,0,0,0.82),0_11px_42px_rgba(0,0,0,0.6)]"
+    >
       {site.heroSubtitle}
     </p>
 
     {/* Listen & Subscribe On */}
-    <div class="mt-12">
-      <p class="eyebrow mb-5 text-[0.7rem] text-cream/60">Escuchá y seguí en</p>
-      <ul class="flex flex-wrap items-center justify-center gap-3">
+    <div class="mt-12 w-full">
+      <p
+        class="eyebrow mb-5 text-[0.7rem] text-cream [text-shadow:0_1px_3px_rgba(0,0,0,0.95),0_2px_9px_rgba(0,0,0,0.75)]"
+      >
+        Escuchá y seguí en
+      </p>
+      <ul class="flex flex-wrap items-center justify-center gap-3 md:justify-start">
         {
           platforms.map((p) => (
             <li>
@@ -53,7 +69,7 @@ const hasImage = site.heroImage && site.heroImage.length > 0;
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="eyebrow inline-block rounded-full border border-cream/30 px-5 py-2.5 text-xs text-cream transition-all hover:border-accent hover:bg-accent hover:text-ink"
+                class="eyebrow inline-block rounded-full border border-cream/30 px-5 py-2.5 text-xs text-cream shadow-[0_4px_18px_rgba(0,0,0,0.55)] transition-all [text-shadow:0_1px_6px_rgba(0,0,0,0.7)] hover:border-accent hover:bg-accent hover:text-ink"
               >
                 {p.label}
               </a>
