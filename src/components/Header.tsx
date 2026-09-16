@@ -23,13 +23,10 @@ export default function Header() {
       }
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        {/* Logo / nombre del artista */}
-        <a
-          href="#inicio"
-          className="font-display text-lg uppercase tracking-widest text-cream"
-        >
-          {site.artist}
-        </a>
+        {/* Logo / nombre del artista (h1 para SEO) */}
+        <h1 className="font-display text-lg uppercase tracking-widest text-cream">
+          <a href="#inicio">{site.artist}</a>
+        </h1>
 
         {/* Menu desktop, alineado a la derecha y en mayusculas */}
         <nav className="hidden items-center gap-8 md:flex">

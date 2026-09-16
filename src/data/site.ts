@@ -10,6 +10,26 @@ export const site = {
   heroImage: "/Fransalido-background.jpeg", // vacío usa el degradado por defecto
 };
 
+// Datos de SEO / metadatos para compartir en buscadores y redes.
+export const seo = {
+  title: "Fran Salido — Cantautor santiagueño de folclore",
+  description:
+    "Fran Salido es un cantautor santiagueño de folclore: chacareras, zambas y la mejor música de Santiago del Estero. Uno de los mejores artistas santiagueños. Escuchá su álbum «Santiagueña Luz Nativa».",
+  keywords: [
+    "Fran Salido",
+    "cantautor santiagueño",
+    "folclore",
+    "folklore argentino",
+    "chacareras",
+    "zambas",
+    "música santiagueña",
+    "Santiago del Estero",
+    "Santiagueña Luz Nativa",
+  ],
+  genres: ["Folclore", "Chacarera", "Zamba"],
+  ogImage: "/FRAN-SALIDO-1200x675.jpg",
+};
+
 // Player de Spotify (embed oficial). Pegá acá el enlace que copiás desde
 // Spotify (⋯ → Compartir → Copiar enlace). Sirve para track, álbum o playlist.
 // Ej: "https://open.spotify.com/album/XXXXXXXXXXXXXXXXXXXXXX"
