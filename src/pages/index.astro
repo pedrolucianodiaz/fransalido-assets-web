@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.tsx";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout>
+  <!-- client:load hidrata el header (scroll + menu mobile) en el cliente -->
+  <Header client:load />
+  <Hero />
+
+  <!-- Placeholder de la siguiente seccion para poder ver el efecto sticky del header -->
+  <section id="musica" class="min-h-screen bg-cream px-6 py-24 text-ink">
+    <div class="mx-auto max-w-4xl">
+      <p class="eyebrow text-xs text-accent">Música</p>
+      <h2 class="font-display mt-4 text-3xl uppercase sm:text-5xl">Próximamente</h2>
+      <p class="mt-6 max-w-xl text-ink/70">
+        Acá seguimos construyendo el resto del sitio. El header, el logo y el hero ya
+        están listos y responsivos.
+      </p>
+    </div>
+  </section>
+</Layout>

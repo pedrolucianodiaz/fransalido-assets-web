@@ -1,0 +1,76 @@
+---
+import { site, platforms } from "../data/site";
+
+const hasImage = site.heroImage && site.heroImage.length > 0;
+---
+
+<section
+  id="inicio"
+  class="relative flex min-h-screen items-center justify-center overflow-hidden"
+>
+  {/* Fondo: imagen si existe, si no un degradado */}
+  {
+    hasImage ? (
+      <img
+        src={site.heroImage}
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+      />
+    ) : (
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-ink via-[#1a1320] to-[#2a0f0a]"
+        aria-hidden="true"
+      />
+    )
+  }
+
+  {/* Overlay para legibilidad del texto */}
+  <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
+
+  {/* Contenido centrado */}
+  <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+    <p class="eyebrow mb-6 text-xs text-accent">{site.tagline}</p>
+
+    <h1
+      class="font-display text-5xl leading-[0.95] uppercase text-cream sm:text-7xl lg:text-8xl"
+    >
+      {site.heroTitle.map((line) => <span class="block">{line}</span>)}
+    </h1>
+
+    <p class="mx-auto mt-8 max-w-xl text-base text-cream/80 sm:text-lg">
+      {site.heroSubtitle}
+    </p>
+
+    {/* Listen & Subscribe On */}
+    <div class="mt-12">
+      <p class="eyebrow mb-5 text-[0.7rem] text-cream/60">Escuchá y seguí en</p>
+      <ul class="flex flex-wrap items-center justify-center gap-3">
+        {
+          platforms.map((p) => (
+            <li>
+              <a
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="eyebrow inline-block rounded-full border border-cream/30 px-5 py-2.5 text-xs text-cream transition-all hover:border-accent hover:bg-accent hover:text-ink"
+              >
+                {p.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  {/* Indicador de scroll */}
+  <div
+    class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 animate-bounce text-cream/50"
+    aria-hidden="true"
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>
+</section>

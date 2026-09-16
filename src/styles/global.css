@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Design tokens — replican el estilo del theme de referencia (Podkest) */
+@theme {
+  --font-display: "Boldonse", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+
+  --color-ink: #0d0d0f;
+  --color-cream: #f6f4ef;
+  --color-accent: #ff5c38;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilidad para el subtitulo/lettering en mayusculas con tracking, como el theme */
+.eyebrow {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
