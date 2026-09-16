@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.tsx";
 import Hero from "../components/Hero.astro";
 import SpotifyPlayer from "../components/SpotifyPlayer.astro";
+import Concerts from "../components/Concerts.astro";
+import Footer from "../components/Footer.astro";
 import { spotify } from "../data/site";
 ---
 
@@ -28,4 +30,9 @@ import { spotify } from "../data/site";
       </div>
     </div>
   </section>
+
+  <!-- Grilla de conciertos -->
+  <Concerts />
+
+  <Footer />
 </Layout>

@@ -1,0 +1,39 @@
+---
+const year = new Date().getFullYear();
+const email = "comunicacion@fransalido.com";
+---
+
+<footer class="border-t border-cream/10 bg-ink px-6 py-12 text-cream">
+  <div
+    class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 text-center sm:grid-cols-3 sm:gap-6"
+  >
+    {/* Izquierda: Oficina / Comunicación */}
+    <div class="sm:text-left">
+      <p class="eyebrow mb-2 text-xs text-gold">Oficina / Comunicación</p>
+      <a
+        href={`mailto:${email}`}
+        class="text-sm text-cream/80 transition-colors hover:text-gold"
+      >
+        {email}
+      </a>
+    </div>
+
+    {/* Centro: crédito de diseño */}
+    <div class="sm:text-center">
+      <p class="text-[0.65rem] uppercase tracking-widest text-cream/50">
+        Diseñado y creado
+      </p>
+      <p class="font-display text-lg tracking-wide text-cream">PETER</p>
+    </div>
+
+    {/* Derecha: productora */}
+    <div class="sm:text-right">
+      <p class="text-sm font-medium text-cream">Ututu Producciones</p>
+      <p class="text-sm text-cream/60">Provincia de Córdoba, Capital</p>
+    </div>
+  </div>
+
+  <p class="mt-10 text-center text-xs text-cream/30">
+    © {year} Fran Salido. Todos los derechos reservados.
+  </p>
+</footer>
